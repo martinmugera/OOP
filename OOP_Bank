@@ -1,0 +1,30 @@
+class Bank_Account():
+  def withdraw(self,amount):
+    if type(amount) == int and amount != "":
+      if amount > 0:
+        if (self.balance-amount) > 0:
+          if (self.balance -amount) > 3000:
+            self.balance-=amount
+            
+            return self.balance
+        
+          else:
+            return 'You have insufficient funds in Account'
+                       
+      else:
+        return 'Invalid Amount'
+    
+    else:
+      raise ValueError()
+      
+   def deposit(self,deposit):
+    if type(deposit) == int and deposit !="":
+      if deposit >= 0:
+        self.balance += deposit
+        return self.balance
+
+      else:
+        return 'Invalid Amount'
+
+    else:
+      raise ValueError()
